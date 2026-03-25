@@ -260,9 +260,34 @@
     .reveal.visible { opacity: 1; transform: none; }
 
     @media (max-width: 768px) {
+      /* NAV */
       .nav-links { display: none; }
-      .hero-stat-bar { gap: 1.5rem; }
+
+      /* HERO */
+      #hero { padding: 7rem 5% 4rem; }
+      h1 { font-size: clamp(2rem, 8vw, 3rem); }
+      .hero-sub { font-size: 0.95rem; }
+      .btn-group { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .hero-stat-bar { gap: 1.2rem; margin-top: 3rem; padding-top: 2rem; }
+      .stat-num { font-size: 1.3rem; }
+
+      /* PRODUCTS */
+      #products { padding: 4rem 5%; }
+      .prod-grid { grid-template-columns: 1fr; }
+
+      /* SERVICES */
+      #services { padding: 4rem 5%; }
+      .svc-grid { grid-template-columns: 1fr; }
+
+      /* CONTACT */
+      #contact { padding: 4rem 5%; }
+      .contact-box { padding: 1.8rem; }
+      .contact-email { display: block; margin: 0.4rem 0; }
+
+      /* FOOTER */
       footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; gap: 1rem; }
     }
   </style>
 </head>
@@ -397,8 +422,8 @@
   </div>
   <div class="contact-box reveal">
     <p>For partnerships, services, or support — we're here to help.</p>
-    <a href="mailto:contact@lpagesapplabs.com" class="contact-email">contact@lpagesapplabs.com</a>
-    <a href="mailto:office@lpagesapplabs.com" class="contact-email">office@lpagesapplabs.com</a>
+    <a href="/cdn-cgi/l/email-protection#fa9995948e9b998eba968a9b9d9f899b8a8a969b9889d4999597" class="contact-email"><span class="__cf_email__" data-cfemail="4b2824253f2a283f0b273b2a2c2e382a3b3b272a293865282426">[email&#160;protected]</span></a>
+    <a href="/cdn-cgi/l/email-protection#ef808989868c8aaf839f8e888a9c8e9f9f838e8d9cc18c8082" class="contact-email"><span class="__cf_email__" data-cfemail="d9b6bfbfb0babc99b5a9b8bebcaab8a9a9b5b8bbaaf7bab6b4">[email&#160;protected]</span></a>
   </div>
 </section>
 
@@ -413,12 +438,4 @@
   <div class="footer-copy">© 2026 lpagesapplabs.com</div>
 </footer>
 
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5
