@@ -261,15 +261,29 @@
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero-stat-bar { gap: 1.5rem; }
-      footer { flex-direction: column; text-align: center; }
+      #hero { padding: 7rem 5% 4rem; }
+      h1 { font-size: clamp(2rem, 8vw, 3rem); }
+      .hero-sub { font-size: 0.95rem; }
+      .btn-group { flex-direction: column; align-items: center; }
+      .btn { width: 100%; max-width: 280px; justify-content: center; }
+      .hero-stat-bar { gap: 1.2rem; margin-top: 3rem; padding-top: 2rem; }
+      .stat-num { font-size: 1.3rem; }
+      #products { padding: 4rem 5%; }
+      .prod-grid { grid-template-columns: 1fr; }
+      #services { padding: 4rem 5%; }
+      .svc-grid { grid-template-columns: 1fr; }
+      #contact { padding: 4rem 5%; }
+      .contact-box { padding: 1.8rem; }
+      .contact-email { display: block; margin: 0.4rem 0; }
+      footer { flex-direction: column; text-align: center; align-items: center; }
+      .footer-links { justify-content: center; gap: 1rem; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo"><span class="lp">LPAGES</span><span class="rest">APPLABS</span></a>
+  <a href="#hero" class="nav-logo"><img src="logo.svg" alt="lpagesapplabs" style="height:32px;width:auto;"></a>
   <div class="nav-links">
     <a href="#products">Products</a>
     <a href="#services">Services</a>
@@ -397,13 +411,13 @@
   </div>
   <div class="contact-box reveal">
     <p>For partnerships, services, or support — we're here to help.</p>
-    <a href="mailto:contact@lpagesapplabs.com" class="contact-email">contact@lpagesapplabs.com</a>
-    <a href="mailto:office@lpagesapplabs.com" class="contact-email">office@lpagesapplabs.com</a>
+    <a href="/cdn-cgi/l/email-protection#5c3f3332283d3f281c302c3d3b392f3d2c2c303d3e2f723f3331" class="contact-email"><span class="__cf_email__" data-cfemail="fb9894958f9a988fbb978b9a9c9e889a8b8b979a9988d5989496">[email&#160;protected]</span></a>
+    <a href="/cdn-cgi/l/email-protection#5d323b3b343e381d312d3c3a382e3c2d2d313c3f2e733e3230" class="contact-email"><span class="__cf_email__" data-cfemail="fb949d9d92989ebb978b9a9c9e889a8b8b979a9988d5989496">[email&#160;protected]</span></a>
   </div>
 </section>
 
 <footer>
-  <a href="#hero" class="footer-logo"><span class="lp">LPAGES</span><span class="rest">APPLABS</span></a>
+  <a href="#hero" class="footer-logo"><img src="logo.svg" alt="lpagesapplabs" style="height:28px;width:auto;"></a>
   <div class="footer-links">
     <a href="#products">Products</a>
     <a href="#services">Services</a>
@@ -413,12 +427,4 @@
   <div class="footer-copy">© 2026 lpagesapplabs.com</div>
 </footer>
 
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
-</script>
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5
