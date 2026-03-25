@@ -90,8 +90,8 @@
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
     h1 {
       font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      line-height: 1.08; letter-spacing: -0.02em;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      line-height: 1.2; letter-spacing: -0.02em;
       margin-bottom: 1.5rem; animation: fadeUp 0.7s 0.1s ease both;
     }
     h1 .lp { color: var(--cyan); }
@@ -262,7 +262,7 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       #hero { padding: 7rem 5% 4rem; }
-      h1 { font-size: clamp(2rem, 8vw, 3rem); }
+      h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); line-height: 1.25; }
       .hero-sub { font-size: 0.95rem; }
       .btn-group { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 280px; justify-content: center; }
@@ -284,17 +284,7 @@
 
 <nav>
   <a href="#hero" class="nav-logo">
-  <svg height="30" viewBox="0 0 280 30" xmlns="http://www.w3.org/2000/svg" style="display:block;">
-    <circle cx="11" cy="15" r="4" fill="#10B981"/>
-    <circle cx="11" cy="15" r="8" fill="none" stroke="#10B981" stroke-width="1" opacity="0.4"/>
-    <line x1="11" y1="7" x2="11" y2="3" stroke="#10B981" stroke-width="1.2" opacity="0.6"/>
-    <line x1="18" y1="10" x2="22" y2="7" stroke="#10B981" stroke-width="1.2" opacity="0.4"/>
-    <line x1="18" y1="20" x2="22" y2="23" stroke="#10B981" stroke-width="1.2" opacity="0.3"/>
-    <line x1="4" y1="10" x2="0" y2="7" stroke="#10B981" stroke-width="1.2" opacity="0.3"/>
-    <line x1="4" y1="20" x2="0" y2="23" stroke="#10B981" stroke-width="1.2" opacity="0.2"/>
-    <text x="30" y="21" font-family="Syne,DM Sans,sans-serif" font-weight="800" font-size="19" fill="#10B981" letter-spacing="0.03em">LPAGES</text>
-    <text x="122" y="21" font-family="Syne,DM Sans,sans-serif" font-weight="800" font-size="19" fill="#F8FAFC" letter-spacing="0.03em">APPLABS</text>
-  </svg>
+  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;margin-right:6px;flex-shrink:0;"></span><span style="color:#22D3EE;">LPages</span><span style="color:#10B981;">AppLabs</span>
 </a>
   <div class="nav-links">
     <a href="#products">Products</a>
@@ -307,7 +297,8 @@
 <section id="hero">
   <div class="hero-glow"></div>
   <div class="hero-badge"><span class="badge-dot"></span> Platform v1.0 · 2026</div>
-  <h1><span class="lp">LPages</span><span class="accent">AppLabs</span><br>Platform</h1>
+  <h1><span class="lp">LPages</span><span class="accent">AppLabs</span></h1>
+  <h1 style="margin-top:0.2rem;margin-bottom:1.5rem;">Platform</h1>
   <p class="hero-sub">Building encrypted mobile apps, secure landing pages, and modern web infrastructure.</p>
   <div class="btn-group">
     <a href="#products" class="btn btn-primary">Explore Products</a>
@@ -430,17 +421,7 @@
 
 <footer>
   <a href="#hero" class="footer-logo">
-  <svg height="28" viewBox="0 0 280 30" xmlns="http://www.w3.org/2000/svg" style="display:block;">
-    <circle cx="11" cy="15" r="4" fill="#10B981"/>
-    <circle cx="11" cy="15" r="8" fill="none" stroke="#10B981" stroke-width="1" opacity="0.4"/>
-    <line x1="11" y1="7" x2="11" y2="3" stroke="#10B981" stroke-width="1.2" opacity="0.6"/>
-    <line x1="18" y1="10" x2="22" y2="7" stroke="#10B981" stroke-width="1.2" opacity="0.4"/>
-    <line x1="18" y1="20" x2="22" y2="23" stroke="#10B981" stroke-width="1.2" opacity="0.3"/>
-    <line x1="4" y1="10" x2="0" y2="7" stroke="#10B981" stroke-width="1.2" opacity="0.3"/>
-    <line x1="4" y1="20" x2="0" y2="23" stroke="#10B981" stroke-width="1.2" opacity="0.2"/>
-    <text x="30" y="21" font-family="Syne,DM Sans,sans-serif" font-weight="800" font-size="19" fill="#10B981" letter-spacing="0.03em">LPAGES</text>
-    <text x="122" y="21" font-family="Syne,DM Sans,sans-serif" font-weight="800" font-size="19" fill="#F8FAFC" letter-spacing="0.03em">APPLABS</text>
-  </svg>
+  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;margin-right:6px;flex-shrink:0;"></span><span style="color:#22D3EE;">LPages</span><span style="color:#10B981;">AppLabs</span>
 </a>
   <div class="footer-links">
     <a href="#products">Products</a>
