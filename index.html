@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LPAGESAPPLABS — Secure Apps & Modern Infrastructure</title>
   <meta name="description" content="LPAGESAPPLABS builds encrypted mobile applications, landing pages, and secure web infrastructure.">
+  <link rel="canonical" href="https://lpagesapplabs.com/" />
+  <meta property="og:title" content="LPagesAppLabs — Secure Apps & Modern Infrastructure" />
+  <meta property="og:description" content="Building encrypted mobile apps, secure landing pages, and modern web infrastructure." />
+  <meta property="og:url" content="https://lpagesapplabs.com/" />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -256,11 +261,20 @@
     .footer-copy { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); opacity: 0.5; }
 
     /* SCROLL REVEAL */
-    .reveal { opacity: 1; transform: none; transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
+
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--muted); border-radius: 2px; transition: all 0.2s; }
+    .nav-mobile { display: none; flex-direction: column; gap: 0; background: rgba(15,23,42,0.97); border-top: 1px solid var(--border); padding: 1rem 5%; }
+    .nav-mobile a { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); transition: color 0.2s; }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile a:hover { color: var(--emerald); }
+    .nav-mobile.open { display: flex; }
 
     @media (max-width: 768px) {
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
       #hero { padding: 7rem 5% 4rem; }
       h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); line-height: 1.25; }
       .hero-sub { font-size: 0.95rem; }
@@ -284,14 +298,22 @@
 
 <nav>
   <a href="#hero" class="nav-logo">
-  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;margin-right:6px;flex-shrink:0;"></span><span style="color:#22D3EE;">LPages</span><span style="color:#10B981;">AppLabs</span>
-</a>
+    <img src="logo.svg" alt="LPagesAppLabs" style="height:32px;width:auto;display:block;">
+  </a>
   <div class="nav-links">
     <a href="#products">Products</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
   </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="#products" onclick="closeMenu()">Products</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -416,15 +438,15 @@
   </div>
   <div class="contact-box reveal">
     <p>For partnerships, services, or support — we're here to help.</p>
-    <a href="/cdn-cgi/l/email-protection#5c3f3332283d3f281c302c3d3b392f3d2c2c303d3e2f723f3331" class="contact-email"><span class="__cf_email__" data-cfemail="fb9894958f9a988fbb978b9a9c9e889a8b8b979a9988d5989496">[email&#160;protected]</span></a>
-    <a href="/cdn-cgi/l/email-protection#5d323b3b343e381d312d3c3a382e3c2d2d313c3f2e733e3230" class="contact-email"><span class="__cf_email__" data-cfemail="fb949d9d92989ebb978b9a9c9e889a8b8b979a9988d5989496">[email&#160;protected]</span></a>
+    <a href="mailto:contact@lpagesapplabs.com" class="contact-email">contact@lpagesapplabs.com</a>
+    <a href="mailto:office@lpagesapplabs.com" class="contact-email">office@lpagesapplabs.com</a>
   </div>
 </section>
 
 <footer>
   <a href="#hero" class="footer-logo">
-  <span style="width:8px;height:8px;border-radius:50%;background:#10B981;display:inline-block;margin-right:6px;flex-shrink:0;"></span><span style="color:#22D3EE;">LPages</span><span style="color:#10B981;">AppLabs</span>
-</a>
+    <img src="logo.svg" alt="LPagesAppLabs" style="height:28px;width:auto;display:block;">
+  </a>
   <div class="footer-links">
     <a href="#products">Products</a>
     <a href="#services">Services</a>
@@ -434,4 +456,16 @@
   <div class="footer-copy">© 2026 lpagesapplabs.com</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+  hamburger.addEventListener('click', () => navMobile.classList.toggle('open'));
+  function closeMenu() { navMobile.classList.remove('open'); }
+</script>
+</body>
+</html>
