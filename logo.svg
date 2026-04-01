@@ -9,7 +9,7 @@
     </style>
   </defs>
 
-  <rect width="680" height="320" rx="16" class="logo-bg"/>
+  <!-- background removed — transparent so logo is visible on dark nav -->
 
   <!-- Outer glow rings -->
   <circle cx="130" cy="160" r="98" fill="none" stroke="#10B981" stroke-width="0.5" opacity="0.12"/>
